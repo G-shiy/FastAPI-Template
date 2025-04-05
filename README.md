@@ -1,0 +1,1 @@
+# FastAPI structure folders and factory template
