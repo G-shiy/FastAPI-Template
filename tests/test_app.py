@@ -4,7 +4,7 @@ from fastapi.testclient import TestClient
 from fastapi_todolist.app import app
 
 
-def test_read_root():
+def test_read_root_return_200_ok_and_hello_world():
     client = TestClient(app)
     response = client.get('/')
     expected_status = status.HTTP_200_OK
