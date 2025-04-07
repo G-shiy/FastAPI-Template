@@ -8,10 +8,27 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "fastapi[standart] (>=0.115.12,<0.116.0)"
+    "fastapi[standard] (>=0.115.12,<0.116.0)",
 ]
-
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 79
+extend-exclude = ['migrations']
+
+[tool.ruff.lint]
+preview = true
+select = ['I', 'F', 'E', 'W', 'PL', 'PT']
+
+[tool.ruff.format]
+preview = true
+quote-style = 'single'
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.11.4"
+pytest = "^8.3.5"
+pytest-cov = "^6.1.1"
+
