@@ -3,7 +3,7 @@ name = "fastapi-todolist"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Gustavo",email = "siqgustavo2@hotmail.com"}
+    {name = "Gustavo",email = " "}
 ]
 readme = "README.md"
 requires-python = ">=3.12,<4.0"
