@@ -3,10 +3,32 @@ from fastapi.testclient import TestClient
 
 from fastapi_todolist.app import app
 
+client = TestClient(app)
 
-def test_read_root_return_200_ok_and_hello_world():
-    client = TestClient(app)
-    response = client.get('/')
-    expected_status = status.HTTP_200_OK
-    assert response.status_code == expected_status
-    assert response.json() == {'message': 'Hello World'}
+
+def test_create_user():
+    payload = {
+        "username": "testuser",
+        "email": "testuser@example.com",
+        "password": "testpassword",  # Enviado, mas não será retornado
+        "is_active": True,
+        "is_superuser": False,
+    }
+
+    expected_response = {
+        "username": "testuser",
+        "email": "testuser@example.com",
+        "is_active": True,
+        "is_superuser": False,
+    }
+
+    response = client.post("/users/", json=payload)
+
+    assert response.status_code == status.HTTP_201_CREATED
+    assert response.json() == expected_response
+
+
+def test_health_check():
+    response = client.get("/health")
+    assert response.status_code == status.HTTP_200_OK
+    assert response.json() == {"status": "healthy"}
