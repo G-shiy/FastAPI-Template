@@ -10,13 +10,11 @@ O Taskipy já está incluído como dependência de desenvolvimento no `pyproject
 
 bash
 
-CopiarEditar
-
 `poetry install`
 
 ---
 
-### 📋 Tarefas disponíveis
+### 📋 Comandos disponíveis
 
 |Tarefa|Comando|Descrição|
 |---|---|---|
@@ -33,7 +31,5 @@ CopiarEditar
 ### 💡 Exemplo de uso
 
 bash
-
-CopiarEditar
 
 `poetry run task format      # Formata seu código poetry run task test        # Roda testes + cobertura poetry run task run         # Sobe o servidor FastAPI`
