@@ -8,6 +8,8 @@ class UserSchema(BaseModel):
     is_active: bool = True
     is_superuser: bool = False
 
+class UserDB(UserSchema):
+    id: int
 
 class UserResponseSchema(BaseModel):
     username: str
