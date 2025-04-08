@@ -8,9 +8,13 @@ Este projeto utiliza [Taskipy](https://github.com/illBeRoy/taskipy) para automat
 
 O Taskipy já está incluído como dependência de desenvolvimento no `pyproject.toml`. Para instalá-lo:
 
-bash
-
-`poetry install`
+```bash
+poetry install
+```
+Para ativar o poetry shell
+```bash
+poetry self add poetry-plugin-shell
+```
 
 ---
 
@@ -29,7 +33,16 @@ bash
 ---
 
 ### 💡 Exemplo de uso
+#### SEM POETRY SHELL
+```bash
+ poetry run task format      # Formata seu código 
+ poetry run task test        # Roda testes + cobertura 
+ poetry run task run         # Sobe o servidor FastAPI
+```
 
-bash
-
-`poetry run task format      # Formata seu código poetry run task test        # Roda testes + cobertura poetry run task run         # Sobe o servidor FastAPI`
+#### COM POETRY SHELL
+```bash
+ task format      # Formata seu código 
+ task test        # Roda testes + cobertura 
+ task run         # Sobe o servidor FastAPI
+```
