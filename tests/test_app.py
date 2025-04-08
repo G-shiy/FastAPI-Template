@@ -16,6 +16,7 @@ def test_create_user():
     }
 
     expected_response = {
+        "id": 1,
         "username": "testuser",
         "email": "testuser@example.com",
         "is_active": True,
