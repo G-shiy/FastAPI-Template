@@ -1,6 +1,52 @@
 # FastAPI structure folders and factory template
 
-## 🔧 Task Automation com Taskipy
+## 🧪 Pré-requisitos e configuração do ambiente
+
+Para configurar corretamente o ambiente de desenvolvimento, siga os passos abaixo:
+
+#### 1. Instale o `pipx` (gerenciador de ferramentas Python isoladas)
+
+
+```bash
+python3 -m pip install --user pipx 
+pipx ensurepath
+```
+
+> Feche e reabra o terminal após executar `pipx ensurepath`.
+
+#### 2. Instale o `poetry` com `pipx`
+
+
+```bash
+pipx install poetry
+```
+
+#### 3. Instale o Python 3.12 (caso ainda não tenha)
+
+> Utilize sua ferramenta de gerenciamento de versões preferida, como `pyenv` ou instale manualmente. Exemplo com `pyenv`:
+
+
+```bash
+pyenv install 3.12.2
+```
+
+#### 4. Configure o projeto para usar o Python 3.12
+
+
+```bash
+poetry env use 3.12
+```
+
+> Certifique-se de que o Python 3.12 esteja disponível no seu PATH.
+
+#### 5. Instale as dependências do projeto
+
+```bash
+poetry install
+```
+
+
+# 🔧 Task Automation com Taskipy
 
 Este projeto utiliza [Taskipy](https://github.com/illBeRoy/taskipy) para automatizar tarefas comuns de desenvolvimento, como lint, testes, formatação e execução do servidor.
 
