@@ -1,6 +1,6 @@
 from fastapi import FastAPI, status
 
-from fastapi_todolist.schemas.user_schema import UserResponseSchema, UserSchema
+from fastapi_todolist.schemas.user_schema import UserResponseSchema, UserSchema, UserDB
 
 app = FastAPI()
 
@@ -12,8 +12,11 @@ test_data = []
     status_code=status.HTTP_201_CREATED,
 )
 def create_user(user: UserSchema):
-    test_data.append(user)
-    return user
+    user_with_id = UserDB(
+        id = len(test_data) + 1,
+        **user.model_dump()
+    )
+    return user_with_id
 
 
 @app.get('/health', status_code=status.HTTP_200_OK)

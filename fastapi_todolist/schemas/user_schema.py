@@ -12,6 +12,7 @@ class UserDB(UserSchema):
     id: int
 
 class UserResponseSchema(BaseModel):
+    id: int
     username: str
     email: EmailStr
     is_active: bool
